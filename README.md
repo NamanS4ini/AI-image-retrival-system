@@ -284,9 +284,9 @@ http://127.0.0.1:5000
 
 ## Author
 
-**Anjali Maurya**
+**NISHANT GAURAV**
 
-Master of Computer Applications (MCA)  
-Indira Gandhi Delhi Technical University for Women (IGDTUW)
+BTECH CSE   
+CENTRAL UNIVERSITY OF HARYANA
 
 GitHub: https://github.com/AnjaliiiMaurya
