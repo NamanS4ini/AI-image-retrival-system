@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="shell nav">
+    <a class="nav__brand" href="{{ url_for('main.home') }}">
+      <span class="nav__mark" aria-hidden="true"></span>
+      Image Retrieval
+    </a>
+    <nav class="nav__links" aria-label="Main navigation">
+      {% for endpoint, label in [('main.home', 'Home'), ('main.local_search', 'Local files'), ('main.online_search', 'Online photos'), ('main.history', 'History')] %}
+        <a href="{{ url_for(endpoint) }}" {% if request.endpoint == endpoint %}aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+{% endblock %}
+
+{% block overlays %}
+  {% include 'components/video_modal.html' %}
+{% endblock %}
+
+{% block scripts %}
+  <script defer src="{{ url_for('static', filename='js/utils.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/history_store.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/image_search.js') }}"></script>
+  {% block search_script %}{% endblock %}
+{% endblock %}

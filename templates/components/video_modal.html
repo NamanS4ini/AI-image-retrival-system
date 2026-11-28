@@ -1,0 +1,37 @@
+<div id="video-modal" class="video-modal" aria-hidden="true" style="display:none;">
+  <div class="video-modal__backdrop" id="video-modal-backdrop"></div>
+  <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+    <div class="video-modal__header">
+      <div class="video-modal__title-wrap">
+        <span class="video-modal__title" id="video-modal-title">Media Preview</span>
+        <span class="video-modal__badge" id="video-modal-badge">Matched at 0:00</span>
+      </div>
+      <button class="video-modal__close" id="video-modal-close" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="video-modal__body">
+      <video id="video-modal-player" class="video-modal__player" controls playsinline preload="metadata" style="display:none;"></video>
+      <img id="video-modal-image" class="video-modal__image" alt="Preview" style="display:none;">
+    </div>
+    <div class="video-modal__footer">
+      <button id="video-modal-replay" class="btn-sm btn-sm--outline" type="button" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        <span>Jump to Match (<span id="video-modal-jump-time">0:00</span>)</span>
+      </button>
+      <a id="video-modal-download" class="btn-sm btn-sm--primary" href="#" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span id="video-modal-download-text">Save Media</span>
+      </a>
+    </div>
+  </div>
+</div>

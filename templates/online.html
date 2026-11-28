@@ -1,0 +1,17 @@
+{% extends 'search.html' %}
+
+{% block title %}Online photos · Image Retrieval{% endblock %}
+
+{% block content %}
+<div class="shell search-page">
+  <header class="page-heading">
+    <h1>Search online photos</h1>
+    <p>Describe a scene to find stock photos from Unsplash, Pexels, and Pixabay.</p>
+  </header>
+  {% include 'components/online_panel.html' %}
+</div>
+{% endblock %}
+
+{% block search_script %}
+  <script defer src="{{ url_for('static', filename='js/online_search.js') }}"></script>
+{% endblock %}

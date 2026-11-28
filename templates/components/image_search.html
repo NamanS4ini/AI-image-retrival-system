@@ -1,0 +1,20 @@
+<details class="image-search" id="image-search"{% if show_image_search %} open{% endif %}>
+  <summary>Search by image</summary>
+  <form class="image-search__form" id="image-search-form" method="post" enctype="multipart/form-data"
+        action="{{ url_for('online.search_online_by_image' if online_image_search else 'local.search_local_by_image') }}">
+    <label class="field-label" for="reference-image">Reference image</label>
+    <input id="reference-image" name="image" type="file"
+           accept=".jpg,.jpeg,.png,.webp,.bmp,.gif,.tif,.tiff"
+           aria-describedby="reference-image-help" required>
+    <p class="field-help" id="reference-image-help">JPEG, PNG, WebP, BMP, GIF, or TIFF, up to 10 MB.</p>
+    <p class="field-help" id="reference-image-restore" hidden></p>
+    <img id="reference-image-preview" class="image-search__preview" alt="Reference image preview" hidden>
+    {% if online_image_search %}
+      <label class="field-label image-search__keywords" for="reference-keywords">Stock-photo keywords <span>(optional)</span></label>
+      <input id="reference-keywords" name="keywords" type="text" maxlength="100"
+             placeholder="Snowy mountains at sunset" aria-describedby="reference-keywords-help">
+      <p class="field-help" id="reference-keywords-help">Leave blank to let the app choose a topic. Stock-photo providers receive only the keywords.</p>
+    {% endif %}
+    <button class="button-link image-search__submit" type="submit">Find similar images</button>
+  </form>
+</details>

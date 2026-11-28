@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}History · Image Retrieval{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="shell search-page">
+  <header class="page-heading">
+    <h1>Search history</h1>
+    <p>Search queries, reference filenames, and folder paths are saved in this browser.</p>
+  </header>
+  <section class="history"
+           data-local-url="{{ url_for('main.local_search') }}"
+           data-online-url="{{ url_for('main.online_search') }}">
+    <div class="history__toolbar">
+      <p id="history-status" role="status">Loading history…</p>
+      <button id="clear-history" class="history__clear" type="button" hidden>Clear history</button>
+    </div>
+    <ol id="history-list" class="history__list" aria-label="Search and scan history"></ol>
+    <noscript>Enable JavaScript to view your search history.</noscript>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script defer src="{{ url_for('static', filename='js/history_store.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/history_page.js') }}"></script>
+{% endblock %}

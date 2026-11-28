@@ -1,0 +1,17 @@
+{% extends 'search.html' %}
+
+{% block title %}Local files · Image Retrieval{% endblock %}
+
+{% block content %}
+<div class="shell search-page">
+  <header class="page-heading">
+    <h1>Search local files</h1>
+    <p>Find photos by description and jump to the matching moment in a video.</p>
+  </header>
+  {% include 'components/local_panel.html' %}
+</div>
+{% endblock %}
+
+{% block search_script %}
+  <script defer src="{{ url_for('static', filename='js/local_search.js') }}"></script>
+{% endblock %}

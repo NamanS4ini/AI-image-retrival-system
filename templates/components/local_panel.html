@@ -1,0 +1,71 @@
+<div class="search-panel">
+  <!-- Folder input -->
+  <div class="folder-section">
+    <label class="field-label" for="folder-path">Folder path</label>
+    <div class="folder-bar">
+      <input id="folder-path" class="folder-bar__input" type="text"
+             placeholder="D:\Photos" autocomplete="off" aria-describedby="folder-help">
+      <button id="scan-btn" class="folder-bar__btn" type="button">Scan folder</button>
+    </div>
+    <p class="field-help" id="folder-help">Enter a folder path on the computer running this app.</p>
+    <p class="field-help" id="history-folder-help" hidden>Scan this folder to use the restored search.</p>
+    <p class="field-error" id="scan-error" role="alert" hidden></p>
+  </div>
+
+  <!-- Scan progress -->
+  <div id="scan-progress" class="scan-status" role="status">
+    <div class="scan-status__box">
+      <div class="scan-status__top">
+        <span class="scan-status__label" id="scan-label">Scanning photos and videos…</span>
+        <span class="scan-status__count" id="scan-count">0 / 0</span>
+      </div>
+      <div class="scan-status__bar">
+        <div class="scan-status__fill" id="scan-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scan complete -->
+  <div id="scan-done" class="scan-done" role="status">
+    <div class="scan-done__box">
+      <span>&#10003;</span>
+      <span id="scan-done-text"></span>
+    </div>
+  </div>
+
+  <!-- Local search (shown after scan) -->
+  <div id="local-search" class="search-wrap" style="display:none;">
+    <label class="field-label" for="local-query">Describe what you’re looking for</label>
+    <div class="search-bar">
+      <input id="local-query" class="search-bar__input" type="text"
+             placeholder="A dog running through shallow water" autocomplete="off"
+             aria-describedby="local-query-help">
+      <button id="local-search-btn" class="search-bar__btn" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <span>Search</span>
+        <div class="spinner"></div>
+      </button>
+    </div>
+    <p class="field-help" id="local-query-help">To rank unwanted details lower, try <code>man -hat</code> or <code>man -"white hat"</code>.</p>
+    {% include 'components/image_search.html' %}
+  </div>
+
+  <div id="local-stats" class="stats-bar">
+    <div id="local-stats-text" class="stats-bar__text"></div>
+    <div class="filter-group">
+      <label for="local-min-confidence" class="filter-group__label">Minimum match score</label>
+      <select id="local-min-confidence" class="filter-select">
+        <option value="0">All (0%+)</option>
+        <option value="30">30%+</option>
+        <option value="40">40%+</option>
+        <option value="50" selected>50% (Default)</option>
+        <option value="60">60%+</option>
+        <option value="70">70%+</option>
+        <option value="80">80%+</option>
+      </select>
+    </div>
+  </div>
+  <div class="gallery-container"><div id="local-gallery" class="gallery" aria-live="polite"></div></div>
+</div>
