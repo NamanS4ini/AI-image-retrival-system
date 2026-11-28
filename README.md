@@ -150,7 +150,7 @@ The retrieval system was evaluated using **Precision@15**, which measures the pr
 
 ### Key Observations
 
-- The system performs well on visually distinctive scenes.
+- The performance of system is good for visually distinct scene.
 - Semantic understanding significantly improves retrieval quality compared to keyword-based search.
 - Performance decreases for highly complex or multi-object scenes.
 - OpenAI CLIP effectively supports zero-shot semantic image retrieval without task-specific training.
