@@ -1,6 +1,6 @@
 # AI-Based Image Retrieval System using OpenAI CLIP
 
-An AI-powered semantic image retrieval system that understands natural language queries and returns contextually relevant images from multiple stock image platforms. The application integrates OpenAI's CLIP (Contrastive Language-Image Pre-training) model with Unsplash, Pexels, and Pixabay APIs to perform intelligent image retrieval beyond traditional keyword-based search.
+An AI-powered semantic image retrieval system that understands natural language queries and returns contextually relevant images from several stock image platforms. The application integrates OpenAI's CLIP (Contrastive Language-Image Pre-training) model with Unsplash, Pexels, and Pixabay APIs to perform intelligent image retrieval beyond traditional keyword-based search.
 
 The project is built using Python, Flask, Hugging Face Transformers, and PyTorch, demonstrating the practical application of multimodal AI for real-time image search.
 
